@@ -5,7 +5,7 @@ Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cl
 ## Repositorio
 
 Correr `git clone https://github.com/ferisjuan/el-baraton.git` para sincronizar con el repositorio.
-
+git pull --allow-unrelated-histories
 ## Instalación
 
 Correr `npm install`.
