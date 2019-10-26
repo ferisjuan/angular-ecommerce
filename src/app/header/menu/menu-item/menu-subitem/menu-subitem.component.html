@@ -1,0 +1,9 @@
+<div class="sub-item">
+  <input type="checkbox" [id]="node.id">
+  <label for="node.id">{{node.name}}</label>
+  <ul>
+    <li *ngFor="let sublevel of node.sublevels">
+      <a href="#"><app-menu-subitem [node]="sublevel"></app-menu-subitem></a>
+    </li>
+  </ul>
+</div>

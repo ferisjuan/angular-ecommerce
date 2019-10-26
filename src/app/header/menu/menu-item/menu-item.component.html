@@ -1,0 +1,9 @@
+<div class="item" *ngFor="let category of categories">
+  <input type="checkbox" [id]="category.id">
+  <label [for]="category.id">{{category.name}}</label>
+  <ul>
+    <li *ngFor="let sublevel of category.sublevels">
+      <app-menu-subitem [node]="sublevel"></app-menu-subitem>
+    </li>
+  </ul>
+</div>
