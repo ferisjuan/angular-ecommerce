@@ -1,0 +1,85 @@
+$primary-color: #2196F3
+$dark-gray-color: #333
+*
+  margin: 0
+  padding: 0
+  list-style: none
+  text-decoration: none
+
+.menu
+  overflow: hidden
+
+  &--container
+    border-radius: 8px
+    margin: 20px
+    width: 300px
+    overflow: hidden
+
+  &--item-category
+    background: $primary-color
+    color: white
+    font-weight: 600
+    font-size: 22px
+    display: block
+    padding:  9px 20px
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      width: 14px
+      height: 14px
+      background: $primary-color
+      left: 20px
+      bottom:  -7px
+      transform: rotate(45deg)
+
+.menu--item-subcategory
+  font-size: 18px !important
+  font-weight: bold
+  letter-spacing: 0.8px
+  color: white
+  display: block
+  font-size: 14px
+  margin: 12px 0 3px 6px
+  padding: 4px 10px
+  position: relative
+  &::before
+    content: ""
+    position:absolute
+    width: 6px
+    height: 100%
+    background: $primary-color
+    left: 0
+    top: 0
+    transition: 0.3s
+
+.menu--item-last
+  font-weight: 400
+  color: white
+  display: block
+  font-size: 14px
+  margin: 6px 0 6px 15px
+  padding: 4px 24px
+  position: relative
+  &::before
+    content: ""
+    position: absolute
+    width: 6px
+    height: 100%
+    background: $primary-color
+    left: 0
+    top: 0
+    transition: 0.3s
+    opacity: 0
+  &:hover:before
+    opacity: 1
+
+
+
+.menu--subitem
+  background: $dark-gray-color
+  overflow: hidden
+  transition: max-height 0.3s
+  // max-height: 0;
+
+

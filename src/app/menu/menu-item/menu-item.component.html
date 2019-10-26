@@ -1,0 +1,8 @@
+<div class="menu" *ngFor="let category of categories">
+  <a href="#" class="menu--item-category">{{category.name}}</a>
+  <ul class="menu--subitem">
+    <li *ngFor="let sublevel of category.sublevels">
+      <app-menu-subitem [node]="sublevel"></app-menu-subitem>
+    </li>
+  </ul>
+</div>

@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './header/menu/menu.component';
+import { MenuComponent } from './menu/menu.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
-import { MenuItemComponent } from 'src/app/header/menu/menu-item/menu-item.component';
-import { MenuSubitemComponent } from './header/menu/menu-item/menu-subitem/menu-subitem.component';
+import { MenuItemComponent } from 'src/app/menu/menu-item/menu-item.component';
+import { MenuSubitemComponent } from './menu/menu-item/menu-subitem/menu-subitem.component';
 
 @NgModule({
   declarations: [
