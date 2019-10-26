@@ -1,4 +1,10 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
+import { MenuService } from '../../menu.service';
 
 @Component({
   selector: 'app-menu-subitem',
@@ -6,10 +12,14 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./menu-subitem.component.sass'],
 })
 export class MenuSubitemComponent implements OnInit {
+  private selectedItem: number;
+
   @Input() node;
-  constructor() { }
+  constructor(private menuService: MenuService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onItemSelected(id: number) {
+    this.menuService.onItemSelected(id);
   }
-
 }

@@ -1,18 +1,22 @@
 <div class="menu--subitem">
-  <a href="#" class="menu--item-subcategory"
-    *ngIf="node.sublevels?.length > 0 ; else lastItem ">{{node.name}}
-  </a>
+  <div
+    class="menu--item-subcategory"
+    *ngIf="node.sublevels?.length > 0 ; else lastItem"
+    (click)="onItemSelected(node.id)">{{node.name}}
+  </div>
 
   <ng-template #lastItem>
-    <a href="#" class="menu--item-last">{{node.name}}</a>
+    <div
+      class="menu--item-last"
+      (click)="onItemSelected(node.id)">{{node.name}}</div>
   </ng-template>
 
   <!-- Node de recursión para el menú -->
   <ul *ngIf="node.sublevels?.length">
     <li *ngFor="let sublevel of node.sublevels">
-      <a href="#">
+      <div href="#">
         <app-menu-subitem [node]="sublevel"></app-menu-subitem>
-      </a>
+      </div>
     </li>
   </ul>
 </div>

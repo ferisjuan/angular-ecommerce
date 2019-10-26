@@ -1,1 +1,14 @@
-<p>products works!</p>
+<div class="container--products">
+  <div *ngFor="let product of productList">
+    <div class="product--card" [id]="product.id">
+      <h3>
+        Producto: {{product.name}}
+      </h3>
+      <p>Precio: {{product.price}}</p>
+      <p *ngIf="product.available; else productNotAvailable">
+        Disponible: {{product.quantity}} unidades
+      </p>
+      <ng-template #productNotAvailable><p>No disponible</p></ng-template>
+    </div>
+  </div>
+</div>

@@ -3,25 +3,17 @@
   margin: 0
   padding: 0
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  margin: 8px 0
-
-p
-  margin: 0
-
-.spacer
-  flex: 1
-
 .content
-  display: flex
-  margin: 32px auto
-  padding: 0 16px
-  max-width: 960px
-  flex-direction: column
-  align-items: center
+  display: grid
+  grid-template-columns: [first] 30% [middle] 70% [last]
+  grid-template-rows: auto
+
+.menu--container
+  grid-column-start: first
+  grid-column-end: middle
+
+.container--router
+  grid-column-start: middle
+  grid-column-end: last
+  margin-top: 80px
 
