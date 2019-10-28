@@ -1,6 +1,8 @@
-<div class="container--products">
-  <app-products-controls></app-products-controls>
+<div class="container">
   <div class="product--list">
+    <div class="product--controls">
+      <app-products-controls></app-products-controls>
+    </div>
     <div
       *ngFor="let product of productList
         | filterAvailable:isFiltered

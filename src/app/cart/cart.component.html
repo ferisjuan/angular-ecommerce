@@ -20,7 +20,7 @@
           {{item.product.name}}
         </strong>
       </span>
-      <span>${{onCurrencyFormat(item.product.price)}}</span>
+      <span>{{onCurrencyFormat(item.product.price)}}</span>
       <span>Quedan... {{item.product.quantity}} </span>
     </div>
 
@@ -52,7 +52,7 @@
   </div>
   <button
     (click)="onCheckout()"
-    class=""
+    class="cart--button-checkout"
     type="button"
     name="button">
     Comprar

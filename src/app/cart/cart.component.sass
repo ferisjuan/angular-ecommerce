@@ -1,6 +1,7 @@
 $border-color:#d2dde7
 $title-color: #5E6977
 $light-gray: #43484D
+$green-color: #4CAF50
 
 .cart
   width: 80%
@@ -22,21 +23,21 @@ $light-gray: #43484D
 
   &--item
     padding: 20px 30px
-    height: 120px
+    height: 140px
     display: flex
+    align-items: center
     &:nth-child(3)
       border-top:  1px solid $border-color
       border-bottom:  1px solid $border-color
     &-buttons
-      position: relative
-      padding-top: 30px
+      color: $light-gray
+      padding-top: 0
       margin-right: 60px
 
   &--description
     padding-top: 10px
-    margin-right: 60px
+    margin: 0 30px
     width: 115px
-
 
   &--description span
     display: block
@@ -44,17 +45,19 @@ $light-gray: #43484D
     color: $light-gray
     font-weight: 400
 
-
   &--description span:first-child
-    margin-bottom: 5px
+    font-size: 20px
+    margin-bottom: 15px
+    text-transform: capitalize
 
   &--description span:last-child
+    font-size: 12px
     font-weight: 300
-    margin-top: 8px
+    margin-top: 2px
     color: $light-gray
 
   &--quantity
-    padding-top: 20px
+    padding-top: 0
     margin-right: 60px
 
   &--quantity input
@@ -73,6 +76,17 @@ $light-gray: #43484D
     font-size: 16px
     color: $light-gray
     font-weight: 300
+
+  &--button-checkout
+    background-color: $green-color
+    border: none
+    color: white
+    padding: 15px 32px
+    text-align: center
+    text-decoration: none
+    display: inline-block
+    font-size: 24px
+
 
 button[class*=btn]
   width: 30px
@@ -94,9 +108,9 @@ button[class*=btn]
   font-size: 20px
   margin: 0 auto
 
-@media (max-width: 800px)
+@media (max-width: 880px)
   .cart
-    width: 100%
+    width: 90%
     height: auto
     overflow: hidden
 
