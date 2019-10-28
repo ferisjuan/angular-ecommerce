@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { MenuService } from '../menu/menu.service';
 import { ProductsService } from './products.service';
 import { Product } from './products.model';
+import { CartService } from '../cart/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -21,9 +23,16 @@ export class ProductsComponent implements OnInit, OnDestroy {
   selectedSublevelId: Subscription;
 
   constructor(
+    private cartService: CartService,
     private menuService: MenuService,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private router: Router
   ) {}
+
+  onAddToCart(product: Product) {
+    this.cartService.onAddingProduct(product);
+    this.router.navigate(['cart'])
+  }
 
   ngOnInit() {
     this.selectedSublevelId = this.menuService.selectedItemsId.subscribe(
