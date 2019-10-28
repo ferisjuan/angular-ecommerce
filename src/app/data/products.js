@@ -245,7 +245,7 @@ export default [
     available: true,
     sublevel_id: 4,
     name: 'aliqua',
-    id: '58b5a5b17e64c9onItemSelected0c960eb3c7',
+    id: '58b5a5b17e64c90c960eb3c7',
   },
   {
     quantity: 566,

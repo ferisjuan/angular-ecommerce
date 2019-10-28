@@ -1,8 +1,7 @@
 <div class="menu--subitem">
   <div
     class="menu--item-subcategory"
-    *ngIf="node.sublevels?.length > 0 ; else lastItem"
-    (click)="onItemSelected(node.id)">{{node.name}}
+    *ngIf="node.sublevels?.length > 0 ; else lastItem">{{node.name}}
   </div>
 
   <ng-template #lastItem>

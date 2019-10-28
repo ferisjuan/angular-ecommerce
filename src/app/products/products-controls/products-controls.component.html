@@ -1,0 +1,34 @@
+<div class="product--controls">
+  <app-product-form></app-product-form>
+
+  <span class="product--controls-filter">
+    <i
+      (click)="onSortProducts('ascending', 'available')"
+      class="fas fa-chevron-up"></i>
+    Disponibilidad
+    <i
+      (click)="onSortProducts('descending', 'available')"
+      class="fas fa-chevron-down"></i>
+  </span>
+
+  <span class="product--controls-filter">
+    <i
+      (click)="onSortProducts('ascending', 'price')"
+      class="fas fa-chevron-up"></i>
+    Precio
+    <i
+      (click)="onSortProducts('descending', 'price')"
+      class="fas fa-chevron-down"></i>
+  </span>
+
+  <span
+    class="product--controls-filter">
+    <i
+      (click)="onSortProducts('ascending', 'quantity')"
+      class="fas fa-chevron-up"></i>
+    Cantidad
+    <i
+      (click)="onSortProducts('descending', 'quantity')"
+      class="fas fa-chevron-down"></i>
+  </span>
+</div>

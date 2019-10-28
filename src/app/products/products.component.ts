@@ -11,9 +11,14 @@ import { Product } from './products.model';
   styleUrls: ['./products.component.sass'],
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-  selectedSublevelId: Subscription;
-  currentItemsId: number;
   productList: Product[];
+  priceRange: string;
+  quantityRange: string;
+  isFiltered: boolean;
+
+  filteredStatus: Subscription;
+  productSubscription: Subscription;
+  selectedSublevelId: Subscription;
 
   constructor(
     private menuService: MenuService,
@@ -23,15 +28,28 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.selectedSublevelId = this.menuService.selectedItemsId.subscribe(
       sublevelId => {
-        this.currentItemsId = sublevelId;
-        this.productList = this.productsService.getProducts(
-          sublevelId
+        this.productsService.getProducts(sublevelId);
+        this.productSubscription = this.productsService.productList.subscribe(
+          products => (this.productList = products)
         );
+      }
+    );
+    this.filteredStatus = this.productsService.filterOptions.subscribe(
+      (options: {
+        price: string;
+        quantity: string;
+        available: boolean;
+      }) => {
+        this.priceRange = options.price;
+        this.quantityRange = options.quantity;
+        this.isFiltered = options.available;
       }
     );
   }
 
   ngOnDestroy(): void {
     this.selectedSublevelId.unsubscribe();
+    this.productSubscription.unsubscribe();
+    this.filteredStatus.unsubscribe();
   }
 }

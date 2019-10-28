@@ -1,14 +1,35 @@
 <div class="container--products">
-  <div *ngFor="let product of productList">
-    <div class="product--card" [id]="product.id">
-      <h3>
-        Producto: {{product.name}}
-      </h3>
-      <p>Precio: {{product.price}}</p>
-      <p *ngIf="product.available; else productNotAvailable">
-        Disponible: {{product.quantity}} unidades
-      </p>
-      <ng-template #productNotAvailable><p>No disponible</p></ng-template>
+  <h2
+    class="product--faq"
+    *ngIf="!currentItemsId; else productsView">
+    Para comenzar seleccione una opción en el menú
+  </h2>
+  <ng-template #productsView>
+    <app-products-controls></app-products-controls>
+    <div class="product--list">
+      <div
+        *ngFor="let product of productList
+        | filterAvailable:isFiltered
+        | filterRange:'price':priceRange
+        | filterRange:'quantity':quantityRange">
+
+        <div class="product--card" [id]="product.id">
+          <h3>
+            Producto: {{product.name}}
+          </h3>
+          <p>Precio: {{product.price}}</p>
+          <p>
+            Quedan: {{product.quantity}} unidades
+          </p>
+          <p *ngIf="product.available; else productNotAvailable" style="color:green">
+            Disponible
+          </p>
+          <ng-template #productNotAvailable>
+            <p style="color: red">No disponible</p>
+          </ng-template>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </ng-template>
 </div>
